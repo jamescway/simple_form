@@ -12,10 +12,24 @@ module SimpleForm
         end
       end
 
-       # * value_method(optional parameter) can be used when passing a collection to a select tag.  
-       #   It calls a method on the objects in the collection which produces a value 
-       #   (i.e. obj.name) that value can be used to populate the option tags instead 
-       #   of the default object id number. (Example: :value_method => :name)
+      # Input method is used to create simple form elements
+      # OPTIONAL Parameters 
+      # * label - modifies the form elements label, false to disable
+      # * label_html - html options hash
+      # * hint - creates hint message under the form element by default
+      # * placeholder - string that appears inside a form element before user types
+      # * input_html - html options hash 
+      # * required - true/false, detects automatically by default
+      # * as - type of form element to create (i.e. :text, :radio, etc.)
+      # * disabled - disables the element
+      # * error_html - html options hash for errors displayed under form element
+      # * collection - collection object to pass, by default input knows to use select
+      # * prompt - for select tags to prompt message at first position
+      # * priority - set which select option goes to the top
+      # * value_method(optional) can be used when passing a collection to a select tag.  
+      #   It calls a method on the objects in the collection which produces a value 
+      #   (i.e. obj.name) that value can be used to populate the option tags instead 
+      #   of the default object id number. (Example: :value_method => :name)    
       def input
         label_method, value_method = detect_collection_methods
         @builder.send(:"collection_#{input_type}", attribute_name, collection,
