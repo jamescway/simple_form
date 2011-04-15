@@ -12,8 +12,7 @@ module SimpleForm
         end
       end
 
-       # Input method
-       # * value_method can be used when passing a collection to a select tag.  
+       # * value_method(optional parameter) can be used when passing a collection to a select tag.  
        #   It calls a method on the objects in the collection which produces a value 
        #   (i.e. obj.name) that value can be used to populate the option tags instead 
        #   of the default object id number. (Example: :value_method => :name)
