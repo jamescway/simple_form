@@ -13,7 +13,7 @@ module SimpleForm
       end
 
        # Input method
-       # * value_method can be any method name called on the object to populate option tags value (i.e. myobject.name is :value_method => :name), defaults to objects id
+       # * value_method can be any method name called on the object to populate option tag's value (i.e. myobject.name is :value_method => :name), defaults to objects id
       def input
         label_method, value_method = detect_collection_methods
         @builder.send(:"collection_#{input_type}", attribute_name, collection,
